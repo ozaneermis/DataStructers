@@ -86,8 +86,7 @@ void createList()
         printf("Please restart the code and enter bigger than 0 ");
     for (i = 0; i < listNumber; i++)
     {
-        /*i 1 den büyük olursa new sürekli ilk node'u oluşturup duracağından dolayı
-        if statement'ı koymak zorundaydım.*/
+        
         if (i == 0)
         {
             new = (node *)malloc(sizeof(node));
@@ -96,16 +95,14 @@ void createList()
         else
         {
             new->next = (node *)malloc(sizeof(node));
-            /*Bu new = new -> next 'nin anlamı yeni node oluştuktan sonra new 
-            bir sonraki node'u işaret etmesi gerekiyordu.*/
+           
             new = new->next;
         }
         printf("Enter the Values Please");
-        /*Burada new  nasıl tekrar head'e geldiğini ve tek tek data değerini 
-        atandığını anlayamadım.*/
+        
         scanf("%d", &new->data);
     }
-    /* Bunun anlamı ise en son node-next'i NULL göstermezse tanımsız olur*/
+   
     new->next = NULL;
 }
 
@@ -114,7 +111,7 @@ void printList(struct node *n)
     while (n != NULL)
     {
         printf("%d\n", n->data);
-        //Bir sonraki node geçmesi için yazılan kod
+        
         n = n->next;
     }
 }
